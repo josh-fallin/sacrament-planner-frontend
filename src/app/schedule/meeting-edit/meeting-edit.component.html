@@ -1,0 +1,45 @@
+<div class="container">
+    <h1>Meeting Form</h1>
+
+    <form [formGroup]="meetingForm" (ngSubmit)="onSubmit()">
+      
+      <div class="form-group">
+        <label for="meetingDate">Meeting Date</label>
+        <input type="text" class="form-control" id="meetingDate" formControlName="meetingDate" required>
+        <label for="conductor">Conductor</label>
+        <input type="text" class="form-control" id="conductor" formControlName="conductor" required>
+        <label for="openHymn">Opening Hymn</label>
+        <input type="text" class="form-control" id="openHymn" formControlName="openHymn" required>
+        <label for="openPrayer">Opening Prayer</label>
+        <input type="text" class="form-control" id="openPrayer" formControlName="openPrayer" required>
+        <label for="closeHymn">Closing Hymn</label>
+        <input type="text" class="form-control" id="closeHymn" formControlName="closeHymn" required>
+        <label for="closePrayer">Closing Prayer</label>
+        <input type="text" class="form-control" id="closePrayer" formControlName="closePrayer" required>
+      </div>
+      <hr>
+
+      <button class="btn btn-primary" type="button" (click)="onAddSpeaker()">Add Speaker</button> <hr>
+
+      <div formArrayName="speakers" *ngFor="let speakerControl of meetingForm.get('speakers').controls; let i = index">
+
+          <div class="form-group" [formGroupName]="i">
+            <label for="firstName">Firstname</label>
+            <input type="text" class="form-control" formControlName="firstName"  required>
+            <label for="lastName">Lastname</label>
+            <input type="text" class="form-control" formControlName="lastName" required>
+            <label for="subject">Topic</label>
+            <input type="text" class="form-control" formControlName="topic" required>
+          </div>
+
+      </div>
+
+      <hr>
+ 
+      <div class="btn-toolbar">
+        <button class="btn btn-success" type="submit">Save</button>
+        <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+      </div>
+
+    </form>
+</div>

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+  
+  
+  <div class="panel-heading">
+    <div class="row">
+      <h3 class="title pad-left-right">Meetings</h3>
+    </div>
+    <div class="row">            
+      <div class="pull-right pad-left-right">
+        <a class="btn btn-success" routerLink="new">New Meeting</a>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12" *ngFor="let meeting of schedule">
+          <div class="pull-left">
+            <h4 class="list-group-item-heading">{{ meeting.date }}</h4>
+          </div>
+          <span class="pad-left-right">Conducting: {{ meeting.conductor }}</span>
+          <span class="pull-right btn-toolbar">
+            <a class="btn btn-primary" routerLink="{{ meeting.id }}">View</a>
+          </span> <hr>
+      </div>
+    </div>
+  </div>
+
+
+    </div>
+  </div>
+</div>
+

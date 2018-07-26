@@ -1,0 +1,21 @@
+<a class="btn btn-primary" (click)="onBack()">Back</a>
+
+<h1> Sacrament Meeting details for {{ meeting.date }} </h1>
+
+<hr>
+
+<h3>Conducting: {{ meeting.conductor }}</h3>
+<h3>Opening Hymn: {{ meeting.openingHymn }} </h3>
+<h3>Opening Prayer: {{ meeting.openingPrayer }} </h3>
+<h3>Speakers:</h3>
+<h4 *ngFor="let speaker of meeting.speakers">
+  {{ speaker.firstName }} {{ speaker.lastName }} - Topic: {{ speaker.topic }}
+</h4>
+
+<h3>Closing Hymn: {{ meeting.closingHymn }} </h3>
+<h3>Closing Prayer: {{ meeting.closingPrayer }} </h3>
+
+<span class="pull-right btn-toolbar">
+    <a class="btn btn-primary" routerLink="edit">Edit</a>
+    <a class="btn btn-danger" (click)="onDelete()">Delete</a>
+  </span>

@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-xs-10">
+    <div class="panel panel-default">
+  
+  
+  <div class="panel-heading">
+    <div class="row">
+      <h3 class="title pad-left-right">{{ speaker.firstName }} {{ speaker.lastName }}</h3>
+    </div>
+  </div>
+  
+  
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="col-xs-10">
+          <div class="pull-left">
+            <h4 class="list-group-item-heading">Topic: {{ speaker.topic }}</h4>
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-10">
+          <div class="pull-left">
+            <h4 class="list-group-item-heading">Date: {{ meetingDate }}</h4>
+          </div>
+        <span class="pull-right btn-toolbar">
+          <a class="btn btn-primary" [routerLink]="['/schedule', meetingId]">View Meeting</a>
+          <a class="btn btn-danger" (click)="onDelete(speaker)">Delete</a>
+        </span> <hr>
+      </div>
+    </div>
+
+  </div>
+          
+
+
+    </div>
+  </div>
+</div>
+
+
